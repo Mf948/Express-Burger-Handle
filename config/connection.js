@@ -1,20 +1,23 @@
+// Set up MySQL connection.
 const mysql = require('mysql');
 
-// use process.ENV.JAWSDB_URL
 const connection = mysql.createConnection({
-    host: 'localhost',
-    port: 3306,
-    user: 'root',
-    password: 'Xferreira948',
-    database: 'burgers_db'
+  host: 'localhost',
+  port: 3306,
+  user: 'root',
+  // NOTE: Be sure to add your MySQL password here!
+  password: 'Xferreira948',
+  database: 'cat_db',
 });
 
-connection.connect((err)=>{
-    if (err){
-        console.error(`error connecting:${err.stack}`);
-        return; 
-    }
-    console.log(`connected as Id ${connection.threadId}`);
+// Make connection.
+connection.connect((err) => {
+  if (err) {
+    console.error(`error connecting: ${err.stack}`);
+    return;
+  }
+  console.log(`connected as id ${connection.threadId}`);
 });
 
+// Export connection for our ORM to use.
 module.exports = connection;

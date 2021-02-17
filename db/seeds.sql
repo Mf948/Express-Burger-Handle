@@ -1,3 +1,6 @@
-INSERT INTO burgers (burger_name,devoured) VALUES ("Bacon Chesse",2)
-INSERT INTO burgers (burger_name,devoured) VALUES ("pickle Burger",3)
-INSERT INTO burgers (burger_name,devoured) VALUES ("chesse Burger ",5)
+INSERT INTO cats (name) VALUES ('Molly');
+INSERT INTO cats (name) VALUES ('Charlie');
+INSERT INTO cats (name, sleepy) VALUES ('Poppy', true);
+INSERT INTO cats (name, sleepy) VALUES ('Oscar', true);
+INSERT INTO cats (name, sleepy) VALUES ('Smudge', true);
+INSERT INTO cats (name) VALUES ('Daisy');
