@@ -6,8 +6,8 @@ const burger = {
     orm.all('burger', (res) => cb(res));
   },
   // The variables cols and vals are arrays.
-  create(cols, vals, cb) {
-    orm.create('burger', cols, vals, (res) => cb(res));
+  create(condition,cb) {
+    orm.create('burger', condition,  (res) => cb(res));
   },
   update(condition, cb) {
     orm.update('burger', condition, (res) => cb(res));

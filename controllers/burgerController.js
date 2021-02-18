@@ -17,16 +17,15 @@ router.get('/', (req, res) => {
 });
 
 router.post('/api/cats', (req, res) => {
-  burger.create(['name', 'sleepy'], [req.body.name, req.body.sleepy], (result) => {
+  console 
+  burger.create(['name'], [req.body.name], (result) => {
     // Send back the ID of the new quote
     res.json({ id: result.insertId });
   });
 });
 
 router.put('/api/cats/:id', (req, res) => {
- // const condition = `id = ${req.params.id}`;
-
-  //console.log('condition', condition);
+ 
   burger.update(
     req.params.id,
     (result) => {
@@ -39,7 +38,7 @@ router.put('/api/cats/:id', (req, res) => {
   );
 });
 
-router.delete('/api/cats/:id', (req, res) => {
+router.delete('/api/burger/:id', (req, res) => {
   const condition = `id = ${req.params.id}`;
 
   burger.delete(condition, (result) => {

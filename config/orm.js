@@ -16,8 +16,8 @@ const orm = {
       cb(result);
     });
   },
-  create(table, cols, vals, cb) {
-    let queryString = `INSERT INTO ${table}`;
+  create(table, condition, vals, cb) {
+    let queryString = `INSERT INTO ${table} VALUES (${condition})`;
 
     console.log(queryString);
 
@@ -33,7 +33,7 @@ const orm = {
   update(table, condition, cb) {
 
     let queryString = `UPDATE ${table} SET devoured = true WHERE id = ${condition}`
-
+ 
     console.log(queryString);
     connection.query(queryString, (err, result) => {
       if (err) {
