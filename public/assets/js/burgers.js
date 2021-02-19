@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
 
   // UPDATE
-  const changeSleepBtns = document.querySelectorAll('.change-sleep');
+  const changeSleepBtns = document.querySelectorAll('.change-devoured');
 
   // Set up the event listener for the create button
   if (changeSleepBtns) {
@@ -13,13 +13,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
       button.addEventListener('click', (e) => {
         // Grabs the id of the element that goes by the name, "id"
         const id = e.target.getAttribute('data-id');
-        const newSleep = e.target.getAttribute('data-newsleep');
+        const newDevoured = e.target.getAttribute('data-newDevoured');
 
-        const newSleepState = {
-          sleepy: newSleep,
+        const newDevouredState = {
+          sleepy: newDevoured,
         };
 
-        fetch(`/api/cats/${id}`, {
+        fetch(`/api/burger/${id}`, {
           method: 'PUT',
           headers: {
             Accept: 'application/json',
@@ -27,12 +27,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
           },
 
           // make sure to serialize the JSON body
-          body: JSON.stringify(newSleepState),
+          body: JSON.stringify(newDevouredState),
         }).then((response) => {
           // Check that the response is all good
           // Reload the page so the user can see the new quote
           if (response.ok) {
-            console.log(`changed sleep to: ${newSleep}`);
+            console.log(`changed devoured to: ${newDevoured}`);
             location.reload('/');
           } else {
             alert('something went wrong!');
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
 
   // DELETE
-  const deleteCatBtns = document.querySelectorAll('.delete-cat');
+  const deleteCatBtns = document.querySelectorAll('.delete-burger');
 
   // Set up the event listeners for each delete button
   deleteCatBtns.forEach((button) => {

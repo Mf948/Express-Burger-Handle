@@ -5,11 +5,11 @@
 <ul>
   {{#each burgers}}
   {{#unless devoured}}
-  {{!-- {{> cat-block}} --}}
+
   <li>
 	{{name}}
 
-	<button class="change-sleep" data-id="{{id}}" data-newsleep="{{sleep}}">
+	<button class="change-devoured" data-id="{{id}}" data-newsleep="{{sleep}}">
 		    Devoured
 	</button>
 
@@ -24,12 +24,12 @@
 <ul>
   {{#each burgers}}
   {{#if devoured}}
-  {{!-- {{> burgers/cat-block sleep=false}} --}}
+
   <li>
 	{{name}}
 
 
-	<button class="delete-cat" data-id="{{this.id}}">DELETE!</button>
+	<button class="delete-burger" data-id="{{this.id}}">DELETE!</button>
 </li>
   {{/if}}
   {{/each}}

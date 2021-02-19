@@ -16,12 +16,12 @@ const orm = {
       cb(result);
     });
   },
-  create(table, condition, vals, cb) {
+  create(condition, vals, cb) {
     let queryString = `INSERT INTO burger VALUES (${condition})`;
 
     console.log(queryString);
 
-    connection.query(queryString, vals, (err, result) => {
+    connection.query(queryString, (err, result) => {
       if (err) {
         throw err;
       }
@@ -29,7 +29,7 @@ const orm = {
       cb(result);
     });
   },
-  // An example of objColVals would be {name: panther, sleepy: true}
+
   update(table, condition, cb) {
 
     let queryString = `UPDATE ${table} SET devoured = true WHERE id = ${condition}`
