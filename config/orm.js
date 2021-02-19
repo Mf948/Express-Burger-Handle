@@ -17,7 +17,7 @@ const orm = {
     });
   },
   create(table, condition, vals, cb) {
-    let queryString = `INSERT INTO ${table} VALUES (${condition})`;
+    let queryString = `INSERT INTO burger VALUES (${condition})`;
 
     console.log(queryString);
 
